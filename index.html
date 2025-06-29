@@ -1,0 +1,108 @@
+<!-- Esse código tem como função estruturar a página principal 
+ do sistema permitindo gerenciar as tarefas, ver prioridades em 
+ gráfico, consultar calendário, editar e sair. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PROGA - Sistema de Produtividade</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Importação da biblioteca Chart.js para gráfico. -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Logo do sistema. -->
+  <div class="topo-abas">
+    <div class="logo-proga">
+      <h2>Proga</h2>
+      <p>Produtividade e Organização 100%</p>
+    </div>
+
+    <!-- Abas de navegação. -->
+    <div class="abas-navegacao">
+      <button class="aba-topo ativa" onclick="mostrarAbaTopo('abaPrincipal')"> 📝 Minhas Tarefas </button>
+      <button class="aba-topo" onclick="mostrarAbaTopo('abaDoDia')"> 📋 Tarefas de hoje </button>
+      <button class="aba-topo" onclick="mostrarAbaTopo('abaCalendario')"> 📆 Calendário </button>
+    </div>
+
+    <!-- Botão para sair. -->
+    <button onclick="logout()" class="botao-sair">🚪 Sair</button>
+  </div>
+
+  <!-- Aba principal: tarefas a serem feitas. -->
+  <div id="abaPrincipal" class="conteudo-abas-topo ativa">
+    <div class="container">
+      <h1>Novas tarefas</h1>
+
+      <!-- Formulário que adiciona as tarefas. -->
+      <div class="formulario">
+        <input type="text" id="descricao" placeholder="Descrição da tarefa" />
+        <select id="prioridade">
+          <option value="Alta">Alta</option>
+          <option value="Média">Média</option>
+          <option value="Baixa">Baixa</option>
+        </select>
+        <input type="date" id="data" />
+        <input type="time" id="hora" />
+        <button onclick="adicionarTarefa()">➕ Adicionar</button>
+      </div>
+
+      <!-- Lista onde as tarefas adicionadas serão exibidas. -->
+      <ul id="listaTarefas"></ul>
+    </div>
+  </div>
+
+  <!-- Aba que mostra as tarefas do dia atual. -->
+  <div id="abaDoDia" class="conteudo-abas-topo">
+    <div class="container">
+      <!-- Mostra a data. -->
+      <h2>(<span id="dataHoje"></span>)</h2>
+
+      <!-- Lista de tarefas para o dia. -->
+      <ul id="tarefasDoDiaLista"></ul>
+
+      <!-- Mensagem quando não há tarefas. -->
+      <p id="semTarefaHoje" style="display:none;">Nenhuma tarefa para hoje.</p>
+
+      <!-- Canvas para exibir gráfico das prioridades das tarefas. -->
+      <canvas id="graficoPrioridades" style="margin-top: 30px;"></canvas>
+    </div>
+  </div>
+
+  <!-- Aba com calendário completo das tarefas. -->
+  <div id="abaCalendario" class="conteudo-abas-topo">
+    <div class="container">
+      <h2>📆 Calendário 2025</h2>
+      <div id="calendarioCompleto"></div>
+    </div>
+  </div>
+
+  <!-- Modal para editar tarefa existente. -->
+  <div class="modal-fundo" id="modalFundo">
+    <div class="modal">
+      <h3>Editar Tarefa</h3>
+
+      <!-- Campos para editar a tarefa. -->
+      <input type="text" id="editDescricao" placeholder="Descrição" />
+      <select id="editPrioridade">
+        <option value="Alta">Alta</option>
+        <option value="Média">Média</option>
+        <option value="Baixa">Baixa</option>
+      </select>
+      <input type="date" id="editData" />
+      <input type="time" id="editHora" />
+
+      <!-- Botões que salva ou cancela a edição. -->
+      <div>
+        <button onclick="salvarEdicao()">💾 Salvar</button>
+        <button onclick="fecharModal()">❌ Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript-->
+  <script src="script.js"></script>
+</body>
+</html>

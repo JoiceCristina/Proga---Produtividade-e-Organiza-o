@@ -1,0 +1,51 @@
+<!-- Esse código tem como objetivo mostrar um tela de login para o Sistema PROGA. 
+Ele apresenta usuário e senha e verifica se está correto as informações. 
+Se certo, vai para a página index.html, se não aparece mensagem de erro. -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Proga</title>
+  <!-- Link do CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Container principal do formulário de login. -->
+  <div class="login-container">
+    <!-- Título do formulário-->
+    <h2>🔐 Login Proga</h2>
+
+    <!--Campos para inserir usuario e senha. -->
+    <input type="text" id="usuario" placeholder="Usuário (ex: login.pg)" />
+    <input type="password" id="senha" placeholder="Senha (ex: 1223)" />
+
+    <!-- Botão que chama a função login() ao ser clicado. -->
+    <button onclick="login()">Entrar</button>
+
+    <!-- Mensagem de erro se login o estiver errado. -->
+    <p id="erroLogin" style="display:none;">Usuário ou senha incorretos.</p>
+  </div>
+
+<!-- Um script básico para verificar se o usuário e a senha digitados estão iguais aos definidos no código. -->
+  <script>
+    // Função executada quando o botão "Entrar" é clicado.
+    function login() {
+      // Pega os valores digitados nos campos "usuario" e "senha".
+      const usuario = document.getElementById("usuario").value.trim();
+      const senha = document.getElementById("senha").value;
+
+      // Verifica se oq foi digitado é igual ao esperado.
+      if (usuario === "login.pg" && senha === "1223") {
+        // Se o login for válido, armazena no localStorage e redireciona o usuário para a página principal.
+        localStorage.setItem("logado", "true");
+        window.location.href = "index.html";
+      } else {
+        // Caso não válido, exibe mensagem de erro.
+        document.getElementById("erroLogin").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

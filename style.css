@@ -1,0 +1,521 @@
+/*Esse código tem como objetijo estilizar o sistema.*/
+/* Importação da fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Define que largura e altura dos elementos incluem 
+padding e borda, facilitando o layout. */
+* {
+  box-sizing: border-box;
+}
+
+/* Estilos básicos do body. */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff4f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Container geral para centralizar e limitar largura. */
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.3);
+  padding: 30px 40px;
+  width: 90%;
+}
+
+/* Estilização dos títulos principais. */
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #d63384;
+  text-align: center;
+}
+
+/* EEstilização dos formulário de tarefas. */
+.formulario {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+/* Inputs e selects no formulário. */
+input[type="text"], input[type="date"], input[type="time"], select {
+  flex: 1 1 200px;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #f8c2d0;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+/* Foco em inputs e selects. */
+input:focus,
+select:focus {
+  border-color: #f48fb1;
+  outline: none;
+}
+
+/* Botões padrão. */
+button {
+  background: #ff5c93;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(244, 143, 177, 0.4);
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #6b0121;
+}
+
+/* Lista sem marcação. */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Estilização dos itens da lista de tarefas. */
+li {
+  background: #fff0f5;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  box-shadow: 0 2px 6px rgba(201, 158, 165, 0.4);
+}
+
+li:hover {
+  background: #ffe4ec;
+}
+
+/* Tarefa concluída: riscada e com opacidade reduzida. */
+.done {
+  text-decoration: line-through;
+  color: #999;
+  opacity: 0.7;
+}
+
+/* Estilização das etiquetas de prioridade. */
+.priority {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-left: 15px;
+  text-transform: uppercase;
+  min-width: 65px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Cores específicas para cada prioridade. */
+.Alta {
+  background: #f06292;
+  color: #fff;
+}
+
+.Média {
+  background: #f8bbd0;
+  color: #333;
+}
+
+.Baixa {
+  background: #ce93d8;
+  color: #fff;
+}
+
+/* Botões dentro dos itens da lista (editar, excluir, feito ou desfazer). */
+li span:last-child button {
+  background: transparent;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ec407a;
+}
+
+li span:last-child button:hover {
+  color: #d81b60;
+}
+
+/* Estilos específicos para tela de login. */
+/* Container do login.*/
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(255, 192, 203, 0.4);
+  padding: 40px;
+  text-align: center;
+}
+
+/* Estilização dos título do login. */
+.login-container h2 {
+  color: #d63384;
+  margin-bottom: 30px;
+}
+
+/* Estilização dos inputs do login. */
+.login-container input {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 2px solid #f8c2d0;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #f48fb1;
+  outline: none;
+}
+
+/* Estilização do botão de login. */
+.login-container button {
+  width: 100%;
+  background: #f48fb1;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(244, 143, 177, 0.4);
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: #ec407a;
+}
+
+/* Mensagem de erro no login. */
+.login-container #erroLogin {
+  color: #d32f2f;
+  font-size: 14px;
+  margin-top: 15px;
+  display: none;
+}
+
+/* Responsividade. */
+@media (max-width: 480px) {
+  .login-container {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+}
+
+/* Cabeçalho com abas e sair. */
+.topo-abas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(255, 182, 193, 0.3);
+  padding: 15px 20px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* Logo. */
+.logo-proga h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #d63384;
+}
+
+.logo-proga p {
+  margin: 0;
+  font-size: 14px;
+  color: #a64d79;
+}
+
+/* Abas de navegação. */
+.abas-navegacao {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilização dos botões das abas. */
+.aba-topo {
+  background: transparent;
+  border: none;
+  margin: 5px 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #a64d79;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 -2px 0 transparent;
+}
+
+.aba-topo:hover {
+  color: #d63384;
+}
+
+.aba-topo.ativa {
+  box-shadow: inset 0 -3px 0 #d63384;
+  color: #d63384;
+  font-weight: 700;
+}
+
+.aba-topo {
+  box-shadow: inset 0 -3px 0 #d63384;
+  color: #d63384;
+  font-weight: 700;
+}
+
+
+/* Conteúdo das abas - inicialmente escondido. */
+.conteudo-abas-topo {
+  display: none;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 15px;
+}
+
+/* Aba ativa visível. */
+.conteudo-abas-topo.ativa {
+  display: block;
+}
+
+/* Estilização do calendário completo. */
+#calendarioCompleto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas. */
+  grid-template-rows: repeat(4, auto);  /* 4 linhas. */
+  gap: 20px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Responsividade do calendário. */
+@media (max-width: 992px) {
+  #calendarioCompleto {
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  #calendarioCompleto {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto;
+  }
+}
+
+/* Estilização do mês no calendário. */
+.mes-calendario {
+  background-color: #ffc9dd;
+  border: 1px solid #fd488a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Grade de dias do calendário. */
+.grid-calendario {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.grid-calendario div {
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+/* Dias com e sem tarefa. */
+.dia-com-tarefa {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+}
+
+.dia-sem-tarefa {
+  background-color: #fcfcfc;
+}
+
+/* Botão de sair. */
+.botao-sair {
+  background: transparent;
+  color: #d63384;
+  border: 2px solid #d63384;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.botao-sair:hover {
+  background-color: #6b0121;
+  color: rgb(255, 255, 255);
+}
+
+/* Modal de edição de tarefas. */
+.modal-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 192, 203, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+/* Estilização do modal. */
+.modal {
+  background: #fff0f5;
+  border-radius: 16px;
+  padding: 30px 35px;
+  width: 90%;
+  max-width: 440px;
+  box-shadow: 0 12px 28px rgba(255, 192, 203, 0.5);
+  text-align: center;
+  animation: modalEntrada 0.4s ease forwards;
+  color: #444;
+}
+
+/* Animação do modal. */
+@keyframes modalEntrada {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilização dos inputs e selects dentro do modal. */
+.modal input, .modal select {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid #f8bbd0;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  background: #fff;
+  color: #444;
+}
+
+.modal input:focus,
+.modal select:focus {
+  border-color: #ec407a;
+  outline: none;
+}
+
+/* Botões no modal (Salvar e Editar). */
+.modal button {
+  background: #f48fb1;
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(244, 143, 177, 0.7);
+  margin: 0 10px;
+}
+
+.modal button:hover {
+  background: #ec407a;
+}
+
+/* Mensagem de sem tarefas hoje. */
+#semTarefaHoje {
+  font-style: italic;
+  text-align: center;
+  color: #d16a8c;
+  margin-top: 20px;
+}
+
+/* Gráfico de prioridades. */
+#graficoPrioridades {
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* Responsividade para formulário e botões. */
+@media (max-width: 600px) {
+  .formulario {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* Estilização botões com tooltip. */
+.botao-com-tooltip {
+  position: relative;
+}
+
+.tooltip-texto {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 6px 10px;
+  position: absolute;
+  z-index: 100;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 12px;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.botao-com-tooltip:hover .tooltip-texto {
+  visibility: visible;
+  opacity: 1;
+}
